@@ -77,12 +77,13 @@ function draw() {
     part4 = v2 * v2 * len2 * m2 * Math.cos(r1 - r2);
     part5 = len2 * (2 * m1 + m2 - (m2 * Math.cos(2 * r1 - 2 * r2)));
     a2 = (part1 * (part2 + part3 + part4)) / part5;
-  
-    a1 *= 0.999;
-    a2 *= 0.999;
 
     v1 += a1;
     v2 += a2;
+
+    v1 *= 0.999;
+    v2 *= 0.999;
+
     r1 += v1;
     r2 += v2;
   }
