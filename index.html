@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" href="assets/pendulum.png" type="image/x-icon">
+  <title>Double Pendulum</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/bf5b084248.js" crossorigin="anonymous"></script>
+  
+</head>
+<body>
+
+  <canvas id="sub_canvas"></canvas>
+  <canvas id="main_canvas"></canvas>
+ 
+  <div class="sidebar collapsed">
+    <i class="fas fa-bars clickable" onclick="sidebarHandler()"></i>
+    <div>
+
+      <div>
+        <i onclick="restart()" class="fas fa-fast-backward clickable"></i>
+        <i onclick="pause()" class="fas fa-pause clickable" style="margin-left: 2px;"></i>
+        <i onclick="step()" class="fas fa-step-forward clickable"></i>
+      </div>
+
+      <h2>Settings</h2>
+
+      <span class="setting">Length 1: </span>
+      <span id="length1">2</span>
+      <input oninput="updateLength(1, this.value)" id="slider1" type="range" class="slider" min="10" max="500" value="200">
+
+      <span class="setting">Length 2: </span>
+      <span id="length2">1</span>
+      <input oninput="updateLength(2, this.value)" id="slider2" type="range" class="slider" min="10" max="500" value="100">
+
+      <span class="setting">Mass 1: </span>
+      <span id="mass1">6</span>
+      <input oninput="updateMass(1, this.value)" id="slider3" type="range" class="slider" min="10" max="2000" value="600">
+
+      <span class="setting">Mass 2: </span>
+      <span id="mass2">5</span>
+      <input oninput="updateMass(2, this.value)" id="slider4" type="range" class="slider" min="10" max="2000" value="500">
+
+      <span class="setting">Gravity: </span>
+      <span id="gravity">9.8</span>
+      <input oninput="updateGrav(this.value)" id="slider5" type="range" class="slider" min="0" max="2000" value="980">
+
+      <button onclick="startDraw()" id="draw">Graph</button>
+      <button onclick="plotDot()" id="plot">Plot Dot</button>
+      <button onclick="clearGraph()" id="clear">Clear Graph</button>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
